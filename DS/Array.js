@@ -33,13 +33,63 @@ class MyArray{
     delete this.data[this.length-1];
     this.length--;
   }
+  //1st try 
+  reverse(str){
+    for(let i=0;i<str.length-1;i++){
+      if(i != str.length-i){
+      
+        let firstElement = this.data[i];
+        let lastElement = this.data[str.length-(i+1)];
+        this.data[i]=lastElement;
+        this.data[str.length-(i+1)]=firstElement;
+      }
+      else
+        break;
+    }
+    return str;
+  }
 }
 
 const newArray = new MyArray();
-newArray.push('Hi');
-newArray.push('Hello');
-newArray.push('!');
-console.log(newArray);
+//newArray.push('H');
+//newArray.push('Hello');
+//newArray.push('!');
+//console.log(newArray);
 //newArray.pop()
-newArray.delete(1);
-console.log(newArray);
+//newArray.delete(1);
+newArray.push('R');
+newArray.push('A');
+newArray.push('J');
+newArray.push('E');
+newArray.push('S');
+newArray.push('H');
+//console.log(newArray);
+//newArray.reverse(newArray);
+
+//Reverse using 2 variables
+function reverse(str)
+{
+  if(!str || str.length <2){
+    return 'HMM';
+  }
+    const backward=[];
+    const totalItems = str.length-1;
+    for(let i=totalItems;i>=0;i--){
+      backward.push(str[i]);
+    }
+    console.log(backward);
+    return backward.join('');
+
+}
+//reverse('Hello Rajesh here');
+//Reverse using OOB function
+function reverse2(str){
+  return str.split('').reverse().join('');
+}
+
+reverse2('Hello Rajesh Here')
+
+//Reverse in ES6 syntax
+const reverse3 = str => str.split('').reverse().join('');
+
+reverse3('reverse in ES6')
