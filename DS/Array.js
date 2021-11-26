@@ -23,10 +23,10 @@ class MyArray{
 
   delete(index){
     const item = this.data[index];
-    this.shitItems(index);
+    this.shiftItems(index);
   }
 
-  shitItems(index){
+  shiftItems(index){
     for(let i=index;i<this.length-1;i++){
       this.data[i] = this.data[i+1];
     }
